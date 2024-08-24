@@ -3,19 +3,28 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Teste</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
+  <ion-item>
+    <ion-label>Selecione um Pokémon</ion-label>
+    <ion-select [(ngModel)]="selectedPokemonId" (ionChange)="fetchPokemon()">
+      <ion-select-option *ngFor="let pokemon of pokemons" [value]="pokemon.id">
+        {{ pokemon.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div *ngIf="pokemonImage">
+    <ion-img [src]="pokemonImage"></ion-img>
+    Nome: {{ nomePokemon}}
+    <br/>
+    Altura: {{alturaPokemon}}
+    <br/>
+    Descricao: {{descricao}}
   </div>
 </ion-content>
+
+

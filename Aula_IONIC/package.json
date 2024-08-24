@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^1.7.5",
+    "free-translate": "^0.6.1",
+    "translate-google": "^1.5.0",
+    "translatte": "^3.0.1"
+  }
+}
